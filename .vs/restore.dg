@@ -1,6 +1,1 @@
-#:C:\GitHub\GEV-APP\Common\Common.xproj
-#:C:\GitHub\GEV-APP\src\GEV-APP\Presentation.xproj
-#:C:\GitHub\GEV-APP\Persistance\Persistance.xproj
-#:C:\GitHub\GEV-APP\Application\Application.xproj
-#:C:\GitHub\GEV-APP\Domain\Domain.xproj
-#:C:\GitHub\GEV-APP\Service\Service.xproj
+#:C:\GitHub\GEV-APP\Presentation\Presentation.xproj

@@ -1,5 +1,5 @@
 ﻿{
-  "projects": [ "Application", "Common", "Diagrams","Domain","Persistance","Presentation","Service" ],
+  "projects": [ "Application", "Common", "Diagrams","Domain","Persistance","Service" ],
   "sdk": {
     "version": "1.0.0-preview2-003131"
   }
