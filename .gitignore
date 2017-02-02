@@ -46,3 +46,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /src/GEV-APP/bin/Debug/netcoreapp1.0
+/Application/obj/Debug/netstandard1.6
+/Common/obj/Debug/netstandard1.6
+/Domain/obj/Debug/netstandard1.6
+/Domain/bin/Debug/netstandard1.6
+/Persistance/bin/Debug/netstandard1.6
+/Presentation/bin/Debug/netcoreapp1.0
+/Presentation/obj/Debug/netcoreapp1.0
+/Service/obj/Debug/netstandard1.6
+/Service/bin/Debug/netstandard1.6
+/Persistance/obj/Debug/netstandard1.6
+/Common/bin/Debug/netstandard1.6
