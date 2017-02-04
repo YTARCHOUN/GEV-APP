@@ -12,5 +12,6 @@ namespace VehicleMaintenance.Domain.Vehicles
         public Brand Brand { get; set; }
 
         public DateTime RegistrationDate { get; set; }
+
     }
 }

@@ -1,5 +1,6 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using VehicleMaintenance.Domain.Common;
+using VehicleMaintenance.Domain.Stock;
 
 namespace VehicleMaintenance.Domain.Vehicles
 {
@@ -8,5 +9,9 @@ namespace VehicleMaintenance.Domain.Vehicles
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public IList<VehiclePart> ExchangeParts { get; set; }
+
+        public IList<VehiclePart> CompatibleExchangeParts { get; set; }
     }
 }
