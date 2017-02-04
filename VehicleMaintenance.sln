@@ -26,9 +26,9 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Domain", "Domain\Domain.xpr
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Persistance", "Persistance\Persistance.xproj", "{69BEC3FA-3038-4E23-8139-6C5F841714ED}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenation", "Presenation", "{5C6BEC5B-4F5C-4CA7-B435-488D2454428B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5C6BEC5B-4F5C-4CA7-B435-488D2454428B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Presentation", "VehicleMaintenance\Presentation.xproj", "{E8429B2B-0E54-4D5D-81A4-116BA1DF26BF}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Presentation", "Presentation\Presentation.xproj", "{E8429B2B-0E54-4D5D-81A4-116BA1DF26BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 ﻿using VehicleMaintenance.Domain.Common;
 
-namespace VehicleMaintenance.Domain
+namespace VehicleMaintenance.Domain.Customers
 {
     public class Customer : IEntity
     {

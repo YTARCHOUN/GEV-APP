@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VehicleMaintenance.Domain;
+using VehicleMaintenance.Domain.Customers;
+using VehicleMaintenance.Domain.Employees;
+using VehicleMaintenance.Domain.Reservations;
 
 namespace Application.Interfaces
 {
