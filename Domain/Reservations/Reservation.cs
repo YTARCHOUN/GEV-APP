@@ -1,6 +1,7 @@
 ﻿using VehicleMaintenance.Domain.Common;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Customers;
+using VehicleMaintenance.Domain.Workshops;
 using System;
 
 namespace VehicleMaintenance.Domain.Reservations
@@ -18,6 +19,8 @@ namespace VehicleMaintenance.Domain.Reservations
         public Customer Customer { get; set; }
 
         public Vehicle Vehicle { get; set; }
+
+        public Workshop Workshop { get; set; }
 
         public int Status { get; set; }
     }

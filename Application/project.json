@@ -3,7 +3,7 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.1",
-    "MySql.Data.EntityFrameworkCore": "7.0.6-IR31",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
     "Domain": "1.0.0-*"
   },
 
