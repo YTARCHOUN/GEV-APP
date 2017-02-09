@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using VehicleMaintenance.Domain.Common;
+using VehicleMaintenance.Domain.Common.Entities;
 using VehicleMaintenance.Domain.Stock;
 
 namespace VehicleMaintenance.Domain.Vehicles

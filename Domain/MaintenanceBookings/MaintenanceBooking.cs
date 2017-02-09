@@ -1,16 +1,17 @@
-﻿using VehicleMaintenance.Domain.Common;
-using VehicleMaintenance.Domain.Vehicles;
+﻿using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Workshops;
 using System;
+using VehicleMaintenance.Domain.Common.State;
+using VehicleMaintenance.Domain.Common.Entities;
 
-namespace VehicleMaintenance.Domain.Reservations
+namespace VehicleMaintenance.Domain.MaintenanceBookings
 {
-    public class Reservation : IEntity
+    public class MaintenanceBooking : StatefullEntity,IEntity
     {
-        public const int CREATED = 0;
-        public const int CONFIRMED = 1;
-        public const int CANCELED = 2;
+        public MaintenanceBooking(IState state) : base(state)
+        {
+        }
 
         public int Id { get; set; }
 
@@ -22,6 +23,8 @@ namespace VehicleMaintenance.Domain.Reservations
 
         public Workshop Workshop { get; set; }
 
-        public int Status { get; set; }
+
+
+
     }
 }

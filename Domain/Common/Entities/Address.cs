@@ -1,5 +1,5 @@
 ﻿
-namespace VehicleMaintenance.Domain.Common
+namespace VehicleMaintenance.Domain.Common.Entities
 {
     public class Address : IEntity
     {

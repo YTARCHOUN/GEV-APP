@@ -1,4 +1,4 @@
-﻿using VehicleMaintenance.Domain.Common;
+﻿using VehicleMaintenance.Domain.Common.Entities;
 
 namespace VehicleMaintenance.Domain.Employees
 {
@@ -17,9 +17,9 @@ namespace VehicleMaintenance.Domain.Employees
         {
         }
 
-        public Employee(int EmployeeType)
+        public Employee(int employeeType)
         {
-            this.EmployeeType = EmployeeType;
+            this.EmployeeType = employeeType;
         }
     }
 }

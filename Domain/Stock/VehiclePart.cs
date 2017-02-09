@@ -1,5 +1,5 @@
 ﻿
-using VehicleMaintenance.Domain.Common;
+using VehicleMaintenance.Domain.Common.Entities;
 
 namespace VehicleMaintenance.Domain.Stock
 {

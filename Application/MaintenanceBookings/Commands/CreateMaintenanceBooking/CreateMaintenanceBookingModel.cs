@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Application.Reservations.Commands.CreateReservation
+namespace Application.MaintenanceBookings.Commands.CreateMaintenanceBooking
 {
-    public class CreateReservationModel
+    public class CreateMaintenanceBookingModel
     {
         public string CustomerFirstName { get; set; }
 
@@ -12,7 +12,7 @@ namespace Application.Reservations.Commands.CreateReservation
 
         public DateTime VehicleRegistrationDate { get; set; }
         
-        public DateTime ReservationDateTime { get; set; }
+        public DateTime MaintenanceBookingDateTime { get; set; }
 
         public int BrandId { get; set; }
 

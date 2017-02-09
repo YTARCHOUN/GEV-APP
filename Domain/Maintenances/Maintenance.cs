@@ -1,5 +1,5 @@
 ﻿using VehicleMaintenance.Domain.Employees;
-using VehicleMaintenance.Domain.Common;
+using VehicleMaintenance.Domain.Common.Entities;
 using System.Collections.Generic;
 using VehicleMaintenance.Domain.Vehicles;
 

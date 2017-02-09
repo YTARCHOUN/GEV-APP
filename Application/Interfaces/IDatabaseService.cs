@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Employees;
-using VehicleMaintenance.Domain.Reservations;
+using VehicleMaintenance.Domain.MaintenanceBookings;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 
@@ -13,7 +13,7 @@ namespace Application.Interfaces
 
         DbSet<Employee> Employees { get; set; }
 
-        DbSet<Reservation> Reservations { get; set; }
+        DbSet<MaintenanceBooking> MaintenanceBookings { get; set; }
 
         DbSet<Vehicle> Vehicles { get; set; }
 

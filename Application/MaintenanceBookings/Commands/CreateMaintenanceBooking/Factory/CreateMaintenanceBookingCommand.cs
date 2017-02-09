@@ -1,32 +1,37 @@
 ﻿using Application.Customers.Commands;
 using Application.Interfaces;
-using Application.Reservations.Commands.CreateReservation;
+using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 using System;
 using VehicleMaintenance.Application.Customers.Commands.CreateCustomer;
-using VehicleMaintenance.Application.Reservations.Commands.CreateReservation;
-using VehicleMaintenance.Application.Reservations.Commands.CreateReservation.Factory;
+using VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory;
 using VehicleMaintenance.Application.Vehicles.Commands;
 using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Vehicles;
 
-namespace VehicleMaintenance.Application.Reservations.Commands
+namespace VehicleMaintenance.Application.MaintenanceBookings.Commands
 {
-    public class CreateReservationCommand : ICreateReservationCommand
+    public class CreateMaintenanceBookingCommand : ICreateMaintenanceBookingCommand
     {
 
         private readonly IDatabaseService _database;
-        private readonly IReservationFactory _factory;
+        private readonly IMaintenanceBookingFactory _factory;
         private readonly ICreateCustomerCommand _customerCommand;
         private readonly ICreateVehicleCommand _vehicleCommand;
-        private CreateReservationModel _model;
+        private CreateMaintenanceBookingModel _model;
 
-        public CreateReservationCommand(IDatabaseService database, IReservationFactory factory)
+        public CreateMaintenanceBookingCommand(IDatabaseService database, 
+            IMaintenanceBookingFactory factory,
+            ICreateCustomerCommand customerCommand,
+            ICreateVehicleCommand vehicleCommand)
         {
             _database = database;
             _factory = factory;
+            _customerCommand = customerCommand;
+            _vehicleCommand = vehicleCommand;
         }
-        public void Execute(CreateReservationModel model)
+        public void Execute(CreateMaintenanceBookingModel model)
         {
             _model = model;
 
@@ -38,9 +43,9 @@ namespace VehicleMaintenance.Application.Reservations.Commands
 
             var workshop = _database.Workshops.Find("WorkshopId");
 
-            var reservation = _factory.Create(dateTime, customer, vehicle, workshop);
+            var MaintenanceBooking = _factory.Create(dateTime, customer, vehicle, workshop);
 
-            _database.Reservations.Add(reservation);
+            _database.MaintenanceBookings.Add(MaintenanceBooking);
 
             _database.Save();
                        
@@ -66,7 +71,7 @@ namespace VehicleMaintenance.Application.Reservations.Commands
             {
                 var createVehicleModel = new CreateVehicleModel();
                 createVehicleModel.RegistrationNumber = _model.VehicleRegistrationNumber;
-                createVehicleModel.RegistrationDate = _model.ReservationDateTime;
+                createVehicleModel.RegistrationDate = _model.MaintenanceBookingDateTime;
                 createVehicleModel.BrandId = _model.BrandId;
                 _vehicleCommand.Create(createVehicleModel);
             }

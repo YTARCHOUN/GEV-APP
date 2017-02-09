@@ -9,9 +9,10 @@ namespace VehicleMaintenance.Application.Vehicles.Commands
     {
         private readonly IDatabaseService _databaseService;
         private readonly IVehicleFactory _factory;
-        public CreateVehicleCommand(IDatabaseService databaseService)
+        public CreateVehicleCommand(IDatabaseService databaseService, IVehicleFactory factory)
         {
             _databaseService = databaseService;
+            _factory = factory;
         }
         public void Create(CreateVehicleModel model)
         {
