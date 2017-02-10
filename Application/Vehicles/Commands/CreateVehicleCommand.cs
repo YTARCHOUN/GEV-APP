@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces;
-using System;
 using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle.Factory;
 

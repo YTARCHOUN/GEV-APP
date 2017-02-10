@@ -8,7 +8,7 @@ namespace VehicleMaintenance.ViewModel.MaintenanceBooking
     {
         public List<SelectListItem> Brands { get; set; }
 
-        public List<SelectListItem> MaintenanceServices { get; set; }
+        public List<SelectListItem> MaintenanceOptions { get; set; }
 
         public CreateMaintenanceBookingModel CreateMaintenanceBookingModel { get; set; }
     }

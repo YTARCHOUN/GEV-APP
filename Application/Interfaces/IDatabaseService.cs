@@ -2,6 +2,7 @@
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Employees;
 using VehicleMaintenance.Domain.MaintenanceBookings;
+using VehicleMaintenance.Domain.Maintenances;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 
@@ -20,6 +21,8 @@ namespace Application.Interfaces
         DbSet<Brand> Brands { get; set; }
 
         DbSet<Workshop> Workshops { get; set; }
+
+        DbSet<MaintenanceOption> MaintenanceOptions { get; set; }
 
         void Save();
     }

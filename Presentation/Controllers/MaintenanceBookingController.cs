@@ -6,7 +6,11 @@ namespace VehicleMaintenance.Controllers
 {
     public class MaintenanceBookingController : Controller
     {
-        // GET: /<controller>/
+
+        public MaintenanceBookingController()
+        {
+
+        }
         public IActionResult Index()
         {
             return View();
