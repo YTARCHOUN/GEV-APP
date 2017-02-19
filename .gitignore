@@ -61,3 +61,5 @@ Application/bin/Debug/netstandard1.6/Application.deps.json
 /Application/bin/Debug/netstandard1.6
 /VehicleMaintenance/bin/Debug/netcoreapp1.0
 /VehicleMaintenance/obj/Debug/netcoreapp1.0
+/DataAccess/bin/Debug/netstandard1.6
+/DataAccess/obj/Debug/netstandard1.6
