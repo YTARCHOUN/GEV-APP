@@ -5,13 +5,13 @@ using VehicleMaintenance.Domain.MaintenanceBookings.States;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 
-namespace VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory
+namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory
 {
     public class MaintenanceBookingFactory : IMaintenanceBookingFactory
     {
         public MaintenanceBooking Create(DateTime datetime, Customer customer, Vehicle vehicle, Workshop workshop)
         {
-            var maintenanceBooking = new MaintenanceBooking(new CreatedState());
+            var maintenanceBooking = new MaintenanceBooking();
 
             maintenanceBooking.DateTime = datetime;
 

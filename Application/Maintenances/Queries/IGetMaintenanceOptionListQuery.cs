@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace VehicleMaintenance.Application.Maintenances.Queries
+namespace VehicleMaintenance.DataAccess.Maintenances.Queries
 {
     public interface IGetMaintenanceOptionListQuery
     {
-        List<MaintenanceOptionModel> Execute();
+        Task<List<MaintenanceOptionModel>> Execute();
     }
 }

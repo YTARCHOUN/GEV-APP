@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace VehicleMaintenance.Application.Vehicles.Queries
+namespace VehicleMaintenance.DataAccess.Vehicles.Queries
 {
     public interface IGetBrandListQuery
     {
-        List<BrandModel> Execute();
+        Task<List<BrandModel>> Execute();
     }
 }

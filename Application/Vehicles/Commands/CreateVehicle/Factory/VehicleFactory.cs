@@ -1,8 +1,7 @@
-﻿using Application.Interfaces;
-using System;
+﻿using System;
 using VehicleMaintenance.Domain.Vehicles;
 
-namespace VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle.Factory
+namespace VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle.Factory
 {
     public class VehicleFactory : IVehicleFactory
     {

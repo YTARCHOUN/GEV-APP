@@ -1,6 +1,6 @@
 ﻿using Application.Customers.Commands;
 
-namespace VehicleMaintenance.Application.Customers.Commands.CreateCustomer
+namespace VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer
 {
     public interface ICreateCustomerCommand
     {

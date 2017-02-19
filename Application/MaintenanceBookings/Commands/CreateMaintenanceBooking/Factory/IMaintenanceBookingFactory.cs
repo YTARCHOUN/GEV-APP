@@ -4,7 +4,7 @@ using VehicleMaintenance.Domain.MaintenanceBookings;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 
-namespace VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory
+namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory
 {
     public interface IMaintenanceBookingFactory
     {

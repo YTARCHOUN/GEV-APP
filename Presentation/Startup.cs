@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using VehicleMaintenance.Services.MaintenanceBookings;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using VehicleMaintenance.DataAccess.Vehicles.Queries;
+using VehicleMaintenance.DataAccess.Maintenances.Queries;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory;
+using VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer;
+using VehicleMaintenance.DataAccess.Vehicles.Commands;
+using VehicleMaintenance.DataAccess.Customers.Factory;
+using VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer.Factory;
+using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle.Factory;
+using VehicleMaintenance.DataAccess;
 
 namespace VehicleMaintenance
 {
@@ -33,10 +41,40 @@ namespace VehicleMaintenance
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddMvc();
+            AddDatabase(services);
+            AddFactories(services);
+            AddCommands(services);
+            AddQueries(services);
+
+        }
+
+        private void AddDatabase(IServiceCollection services)
+        {
+            var connectionString = Configuration.GetConnectionString("VehicleMaintenance");
+            services.AddSingleton<IDatabaseService>(p => new DatabaseService(connectionString));
+        }
+
+        private void AddFactories(IServiceCollection services)
+        {
+            services.AddTransient<ICreateMaintenanceBookingsViewModelFactoy, CreateMaintenanceBookingsViewModelFactory>();
+            services.AddTransient<IMaintenanceBookingFactory, MaintenanceBookingFactory>();
+            services.AddTransient<ICustomerFactory, CustomerFactory>();
+            services.AddTransient<IVehicleFactory, VehicleFactory>();
+        }
+
+        private void AddCommands(IServiceCollection services)
+        {
+            services.AddTransient<ICreateMaintenanceBookingCommand, CreateMaintenanceBookingCommand>();
+            services.AddTransient<ICreateCustomerCommand, CreateCustomerCommand>();
+            services.AddTransient<ICreateVehicleCommand, CreateVehicleCommand>();
+        }
+
+        private void AddQueries(IServiceCollection services)
+        {
+            services.AddTransient<IGetBrandListQuery, GetBrandListQuery>();
+            services.AddTransient<IGetMaintenanceOptionListQuery, GetMaintenanceOptionListQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

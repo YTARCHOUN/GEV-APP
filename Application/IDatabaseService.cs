@@ -6,7 +6,7 @@ using VehicleMaintenance.Domain.Maintenances;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 
-namespace Application.Interfaces
+namespace VehicleMaintenance.DataAccess
 {
     public interface IDatabaseService
     {

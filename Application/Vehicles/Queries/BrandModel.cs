@@ -1,4 +1,4 @@
-﻿namespace VehicleMaintenance.Application.Vehicles.Queries
+﻿namespace VehicleMaintenance.DataAccess.Vehicles.Queries
 {
     public class BrandModel
     {

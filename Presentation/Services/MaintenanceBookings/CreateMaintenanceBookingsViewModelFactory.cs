@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using VehicleMaintenance.Application.Maintenances.Queries;
-using VehicleMaintenance.Application.Vehicles.Queries;
+using VehicleMaintenance.DataAccess.Maintenances.Queries;
+using VehicleMaintenance.DataAccess.Vehicles.Queries;
 using VehicleMaintenance.ViewModel.MaintenanceBooking;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
@@ -29,14 +29,14 @@ namespace VehicleMaintenance.Services.MaintenanceBookings
 
             var createMaintenanceBookingViewModel = new CreateMaintenanceBookingViewModel();
 
-            createMaintenanceBookingViewModel.Brands = brands.Select(
+            createMaintenanceBookingViewModel.Brands = brands.Result.Select(
                 b => new SelectListItem
                 {
                     Value = b.Id.ToString(),
                     Text = b.Name
                 }).ToList();
 
-            createMaintenanceBookingViewModel.MaintenanceOptions = maintenanceOptions.Select(
+            createMaintenanceBookingViewModel.MaintenanceOptions = maintenanceOptions.Result.Select(
                 m => new SelectListItem
                 {
                     Value = m.Id.ToString(),

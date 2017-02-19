@@ -1,6 +1,6 @@
 ﻿using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 
-namespace VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking
+namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking
 {
     public interface ICreateMaintenanceBookingCommand
     {

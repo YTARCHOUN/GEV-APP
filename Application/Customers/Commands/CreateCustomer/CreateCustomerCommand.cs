@@ -1,8 +1,7 @@
-﻿using Application.Interfaces;
-using Application.Customers.Commands;
-using VehicleMaintenance.Application.Customers.Factory;
+﻿using Application.Customers.Commands;
+using VehicleMaintenance.DataAccess.Customers.Factory;
 
-namespace VehicleMaintenance.Application.Customers.Commands.CreateCustomer
+namespace VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommand : ICreateCustomerCommand
     {

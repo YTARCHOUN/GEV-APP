@@ -1,6 +1,6 @@
 ﻿using VehicleMaintenance.Domain.Customers;
 
-namespace VehicleMaintenance.Application.Customers.Factory
+namespace VehicleMaintenance.DataAccess.Customers.Factory
 {
     public interface ICustomerFactory
     {

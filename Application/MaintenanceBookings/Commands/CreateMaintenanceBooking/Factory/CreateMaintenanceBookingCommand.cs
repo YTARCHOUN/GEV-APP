@@ -1,16 +1,15 @@
 ﻿using Application.Customers.Commands;
-using Application.Interfaces;
 using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 using System;
-using VehicleMaintenance.Application.Customers.Commands.CreateCustomer;
-using VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
-using VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory;
-using VehicleMaintenance.Application.Vehicles.Commands;
-using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle;
+using VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking.Factory;
+using VehicleMaintenance.DataAccess.Vehicles.Commands;
+using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Vehicles;
 
-namespace VehicleMaintenance.Application.MaintenanceBookings.Commands
+namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
 {
     public class CreateMaintenanceBookingCommand : ICreateMaintenanceBookingCommand
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using VehicleMaintenance.Application.Customers.Factory;
+using VehicleMaintenance.DataAccess.Customers.Factory;
 using VehicleMaintenance.Domain.Customers;
 
-namespace VehicleMaintenance.Application.Customers.Commands.CreateCustomer.Factory
+namespace VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer.Factory
 {
     public class CustomerFactory : ICustomerFactory
     {

@@ -1,10 +1,9 @@
-﻿using Application.Interfaces;
-using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VehicleMaintenance.Application.Vehicles.Queries
+namespace VehicleMaintenance.DataAccess.Vehicles.Queries
 {
     public class GetBrandListQuery : IGetBrandListQuery
     {
@@ -15,15 +14,16 @@ namespace VehicleMaintenance.Application.Vehicles.Queries
             _databaseService = databaseService;
         }
 
-        public List<BrandModel> Execute()
+        public async Task<List<BrandModel>> Execute()
         {
             var brands = _databaseService.Brands.Select(
-                brand => new BrandModel {
+                brand => new BrandModel
+                {
                     Id = brand.Id,
                     Name = brand.Name
                 });
 
-            return brands.ToList();
+            return await brands.ToListAsync();
         }
     }
 }

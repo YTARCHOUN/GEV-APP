@@ -1,10 +1,10 @@
-﻿using Application.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VehicleMaintenance.Application.Maintenances.Queries
+namespace VehicleMaintenance.DataAccess.Maintenances.Queries
 {
     public class GetMaintenanceOptionListQuery : IGetMaintenanceOptionListQuery
     {
@@ -15,7 +15,7 @@ namespace VehicleMaintenance.Application.Maintenances.Queries
             _database = database;
         }
 
-        public List<MaintenanceOptionModel> Execute()
+        public async Task<List<MaintenanceOptionModel>> Execute()
         {
             var maintenanceOptions = _database.MaintenanceOptions.Select(m => new MaintenanceOptionModel
             {
@@ -23,7 +23,7 @@ namespace VehicleMaintenance.Application.Maintenances.Queries
                 Description = m.Description
             });
 
-            return maintenanceOptions.ToList();
+            return await maintenanceOptions.ToListAsync();
         }
     }
 }

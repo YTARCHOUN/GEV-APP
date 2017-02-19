@@ -2,17 +2,17 @@
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Workshops;
 using System;
-using VehicleMaintenance.Domain.Common.State;
 using VehicleMaintenance.Domain.Common.Entities;
+using VehicleMaintenance.Domain.MaintenanceBookings.States;
 
 namespace VehicleMaintenance.Domain.MaintenanceBookings
 {
-    public class MaintenanceBooking : StatefullEntity,IEntity
+    public class MaintenanceBooking : IEntity
     {
-        public MaintenanceBooking(IState state) : base(state)
+        public MaintenanceBooking()
         {
+            StateId = MaintenanceBookingStates.CREATED;
         }
-
         public int Id { get; set; }
 
         public DateTime DateTime { get; set; }
@@ -23,8 +23,6 @@ namespace VehicleMaintenance.Domain.MaintenanceBookings
 
         public Workshop Workshop { get; set; }
 
-
-
-
+        public int StateId { get; set; }
     }
 }

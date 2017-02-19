@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using VehicleMaintenance.Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 using VehicleMaintenance.Services.MaintenanceBookings;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace VehicleMaintenance.Controllers
 {
@@ -20,7 +18,8 @@ namespace VehicleMaintenance.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var viewModel = _factory.Create();
+            return View(viewModel);
         }
 
         public IActionResult Create()

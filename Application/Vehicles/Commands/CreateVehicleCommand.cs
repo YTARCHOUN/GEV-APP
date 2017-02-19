@@ -1,8 +1,7 @@
-﻿using Application.Interfaces;
-using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle;
-using VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle.Factory;
+﻿using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
+using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle.Factory;
 
-namespace VehicleMaintenance.Application.Vehicles.Commands
+namespace VehicleMaintenance.DataAccess.Vehicles.Commands
 {
     public class CreateVehicleCommand : ICreateVehicleCommand
     {

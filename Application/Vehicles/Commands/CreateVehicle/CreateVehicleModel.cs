@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VehicleMaintenance.Application.Vehicles.Commands.CreateVehicle
+namespace VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle
 {
     public class CreateVehicleModel
     {

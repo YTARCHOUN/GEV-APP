@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VehicleMaintenance.Application.Maintenances.Queries
+namespace VehicleMaintenance.DataAccess.Maintenances.Queries
 {
     public class MaintenanceOptionModel
     {

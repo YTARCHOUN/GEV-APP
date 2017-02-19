@@ -1,19 +1,13 @@
-﻿using Application.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Employees;
 using VehicleMaintenance.Domain.MaintenanceBookings;
 using VehicleMaintenance.Domain.Maintenances;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
-using VehicleMaintenance.Persistance.MaintenanceBookings;
-using VehicleMaintenance.Persistance.Vehicles;
 
-namespace VehicleMaintenance.Persistance
+
+namespace VehicleMaintenance.DataAccess
 {
     public class DatabaseService : DbContext, IDatabaseService
     {
@@ -38,18 +32,11 @@ namespace VehicleMaintenance.Persistance
             _connectionString = connectionString;
         }
 
+        private DatabaseService() {  }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_connectionString);
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            new BrandConfiguration(modelBuilder.Entity<Brand>());
-            new MaintenanceOptionConfiguration(modelBuilder.Entity<MaintenanceOption>());
-        }
-
         public void Save()
         {
             SaveChanges();

@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>69bec3fa-3038-4e23-8139-6c5f841714ed</ProjectGuid>
-    <RootNamespace>VehicleMaintenance.Persistance</RootNamespace>
+    <ProjectGuid>e31a4087-cf5c-4979-84c9-a01408440328</ProjectGuid>
+    <RootNamespace>VehicleMaintenance.DataAccess</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
