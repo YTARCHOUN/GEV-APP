@@ -1,5 +1,5 @@
 ﻿
-namespace VehicleMaintenance.Domain.Common.Entities
+namespace VehicleMaintenance.Domain.Common.Entities.Location
 {
     public class Address : IEntity
     {
@@ -11,8 +11,8 @@ namespace VehicleMaintenance.Domain.Common.Entities
 
         public string PostalCode { get; set; }
 
-        public string City { get; set; }
+        public City City { get; set; }
 
-        public string Country { get; set; }
+        public Country Country { get; set; }
     }
 }

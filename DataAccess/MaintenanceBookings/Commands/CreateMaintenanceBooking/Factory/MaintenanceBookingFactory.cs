@@ -1,7 +1,6 @@
 ﻿using System;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.MaintenanceBookings;
-using VehicleMaintenance.Domain.MaintenanceBookings.States;
 using VehicleMaintenance.Domain.Vehicles;
 using VehicleMaintenance.Domain.Workshops;
 

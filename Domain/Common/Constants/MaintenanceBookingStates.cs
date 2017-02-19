@@ -1,5 +1,5 @@
-﻿namespace VehicleMaintenance.Domain.MaintenanceBookings.States
-{
+﻿namespace VehicleMaintenance.Domain.Common.Constants
+{ 
     public class MaintenanceBookingStates
     {
         public const int CREATED = 0;
