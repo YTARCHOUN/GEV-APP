@@ -1,3 +1,5 @@
+#:C:\GitHub\VehicleMaintenance\DataAccess\DataAccess.xproj
+C:\GitHub\VehicleMaintenance\DataAccess\DataAccess.xproj|C:\GitHub\VehicleMaintenance\Domain\Domain.xproj
 #:C:\GitHub\VehicleMaintenance\Presentation\Presentation.xproj
 C:\GitHub\VehicleMaintenance\Presentation\Presentation.xproj|C:\GitHub\VehicleMaintenance\DataAccess\DataAccess.xproj
 C:\GitHub\VehicleMaintenance\DataAccess\DataAccess.xproj|C:\GitHub\VehicleMaintenance\Domain\Domain.xproj

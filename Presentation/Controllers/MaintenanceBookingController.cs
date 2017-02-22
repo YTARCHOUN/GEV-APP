@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using Microsoft.AspNetCore.Mvc;
 using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 using VehicleMaintenance.Services.MaintenanceBookings;
+using VehicleMaintenance.ViewModel.MaintenanceBooking;
 
 namespace VehicleMaintenance.Controllers
 {
@@ -22,10 +24,20 @@ namespace VehicleMaintenance.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Create()
+        public IActionResult Create(CreateMaintenanceBookingViewModel viewModel)
         {
-            var viewModel = _factory.Create();
-            return View(viewModel);
+            var createMaintenanceBookingModel = new CreateMaintenanceBookingModel()
+            {
+                BrandId = viewModel.CreateMaintenanceBookingModel.BrandId,
+                CustomerFirstName = viewModel.CreateMaintenanceBookingModel.CustomerFirstName,
+                CustomerLastName = viewModel.CreateMaintenanceBookingModel.CustomerLastName,
+                MaintenanceBookingDateTime = viewModel.CreateMaintenanceBookingModel.MaintenanceBookingDateTime,
+                VehicleRegistrationDate = viewModel.CreateMaintenanceBookingModel.VehicleRegistrationDate,
+                VehicleRegistrationNumber = viewModel.CreateMaintenanceBookingModel.VehicleRegistrationNumber,
+                MaintenanceServicesIds = viewModel.CreateMaintenanceBookingModel.MaintenanceServicesIds
+            };
+            _createCommand.Execute(createMaintenanceBookingModel);
+            return View();
         }
     }
 }

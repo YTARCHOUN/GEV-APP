@@ -8,6 +8,7 @@ using VehicleMaintenance.DataAccess.Vehicles.Commands;
 using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Vehicles;
+using System.Linq;
 
 namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
 {
@@ -52,7 +53,7 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
 
         private Customer GetOrCreateCustomer()
         {
-            var customer = _database.Customers.Find(_model.CustomerFirstName, _model.CustomerLastName);
+            var customer = _database.Customers.Where(x=>x.FirstName == _model.CustomerFirstName && x.LastName == _model.CustomerLastName).FirstOrDefault();
             if (customer == null)
             {
                 var createCustomerModel = new CreateCustomerModel();

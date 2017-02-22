@@ -4201,7 +4201,8 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "System.Linq": "4.3.0"
         },
         "compile": {
           "netstandard1.6/DataAccess.dll": {}
@@ -8535,7 +8536,8 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "System.Linq": "4.3.0"
         },
         "compile": {
           "netstandard1.6/DataAccess.dll": {}

@@ -7,6 +7,10 @@ namespace VehicleMaintenance.Domain.Maintenances
 {
     public class Maintenance:IEntity
     {
+        public Maintenance()
+        {
+            State = new State(StatefullEntities.Maintenance);
+        }
         public int Id { get; set; }
 
         public Vehicle Vehicle { get; set; }
@@ -17,7 +21,7 @@ namespace VehicleMaintenance.Domain.Maintenances
 
         public int Duration { get; set; }
 
-        public MaintenanceState State { get; set; }
+        public State State { get; set; }
 
         public string Comment { get; set; }
     }

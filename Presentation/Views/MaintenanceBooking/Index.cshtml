@@ -1,15 +1,28 @@
 ﻿@model VehicleMaintenance.ViewModel.MaintenanceBooking.CreateMaintenanceBookingViewModel
 <div>
-    <label>Nom</label>
-    <input type="text" />
-    <label>Prénom</label>
-    <input type="text" />
-    <label>N° immatriculation</label>
-    <input type="text" />
-    <label>Date de mise en circulation</label>
-    <input type="date" />
-    <label>Marque</label>
-    <select asp-items="@Model.Brands"></select>
-    <label>Qu'est ce qu'il faut entretenir ?</label>
-    <select asp-items="@Model.MaintenanceOptions"></select>
+    <form asp-controller="MaintenanceBooking" asp-action="Create" method="post">
+        <label>Nom</label>
+        <input asp-for="@Model.CreateMaintenanceBookingModel.CustomerLastName" />
+        <label>Prénom</label>
+        <input asp-for="@Model.CreateMaintenanceBookingModel.CustomerFirstName"/>
+        <label>N° immatriculation</label>
+        <input asp-for="@Model.CreateMaintenanceBookingModel.VehicleRegistrationNumber"/>
+        <label>Date de mise en circulation</label>
+        <input asp-for="@Model.CreateMaintenanceBookingModel.VehicleRegistrationDate" type="date" />
+        <label>Marque</label>
+        <select asp-items="@Model.Brands"></select>
+        <label>Qu'est ce qu'il faut entretenir ?</label>
+        @{
+            for (int i = 0; i < Model.MaintenanceOptions.Count; i++)
+            {
+                <input type="checkbox" asp-for="@Model.MaintenanceOptions[i].Selected" />
+                <label asp-for="@Model.MaintenanceOptions[i].Selected">@Model.MaintenanceOptions[i].Text</label>
+
+                <input type="hidden" asp-for="@Model.MaintenanceOptions[i].Text" />
+                <input type="hidden" asp-for="@Model.MaintenanceOptions[i].Value" />
+            }
+        }
+        <input type="submit" value="Demande de reservation" />
+    </form>
+    
 </div>

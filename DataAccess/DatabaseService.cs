@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Employees;
 using VehicleMaintenance.Domain.MaintenanceBookings;
@@ -40,6 +42,10 @@ namespace VehicleMaintenance.DataAccess
         public void Save()
         {
             SaveChanges();
+        }
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            return Set<Customer>().ToList();
         }
     }
 }

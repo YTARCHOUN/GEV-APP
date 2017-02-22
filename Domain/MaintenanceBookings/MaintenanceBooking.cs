@@ -8,6 +8,10 @@ namespace VehicleMaintenance.Domain.MaintenanceBookings
 {
     public class MaintenanceBooking : IEntity
     {
+        public MaintenanceBooking()
+        {
+            State = new State(StatefullEntities.MaintenanceBooking);
+        }
         public int Id { get; set; }
 
         public DateTime DateTime { get; set; }
@@ -18,6 +22,6 @@ namespace VehicleMaintenance.Domain.MaintenanceBookings
 
         public Workshop Workshop { get; set; }
 
-        public MaintenanceBookingState State { get; set; }
+        public State State { get; set; }
     }
 }
