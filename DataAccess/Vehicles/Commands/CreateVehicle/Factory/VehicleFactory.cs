@@ -20,11 +20,6 @@ namespace VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle.Factory
             vehicle.RegistrationDate = registrationDate;
             vehicle.Brand = brand;
 
-
-            _database.Vehicles.Add(vehicle);
-
-            _database.Save();
-
             return vehicle;
         }
     }

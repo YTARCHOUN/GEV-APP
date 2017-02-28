@@ -39,7 +39,11 @@ namespace VehicleMaintenance.Controllers
                 MaintenanceServicesIds = viewModel.MaintenanceOptions.FindAll(x => x.Selected = true).Select(item => int.Parse(item.Value)).ToList()
             };
             _createCommand.Execute(createMaintenanceBookingModel);
-            return View();
+            return View("BookingConfirmation");
+        }
+        public IActionResult BookingConfirmation()
+        {
+             return View();
         }
     }
 }

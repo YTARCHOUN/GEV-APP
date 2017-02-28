@@ -4,6 +4,7 @@ using VehicleMaintenance.DataAccess.Vehicles.Queries;
 using VehicleMaintenance.ViewModel.MaintenanceBooking;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Application.MaintenanceBookings.Commands.CreateMaintenanceBooking;
+using System;
 
 namespace VehicleMaintenance.Services.MaintenanceBookings
 {
@@ -43,7 +44,7 @@ namespace VehicleMaintenance.Services.MaintenanceBookings
                     Text = m.Description
                 }).ToList();
 
-            createMaintenanceBookingViewModel.CreateMaintenanceBookingModel = new CreateMaintenanceBookingModel();
+            createMaintenanceBookingViewModel.CreateMaintenanceBookingModel = new CreateMaintenanceBookingModel { VehicleRegistrationDate = DateTime.Now };
 
             return createMaintenanceBookingViewModel;
         }
