@@ -9,6 +9,7 @@ using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Vehicles;
 using System.Linq;
+using VehicleMaintenance.Domain.Common.Constants;
 
 namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
 {
@@ -34,16 +35,18 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
         public void Execute(CreateMaintenanceBookingModel model)
         {
             _model = model;
-
+            
             var customer = GetOrCreateCustomer();
 
             var vehicle = GetOrCreateVehicle();
 
             var dateTime = DateTime.Now.AddDays(1);
 
-            var workshop = _database.Workshops.Find("WorkshopId");
+            var workshop = _database.Workshops.Find(1);
 
-            var MaintenanceBooking = _factory.Create(dateTime, customer, vehicle, workshop);
+            var state = _database.States.Find(States.MAINTENANCE_BOOKING_CREATED);
+
+            var MaintenanceBooking = _factory.Create(dateTime, customer, vehicle, workshop,state);
 
             _database.MaintenanceBookings.Add(MaintenanceBooking);
 
@@ -53,27 +56,27 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands
 
         private Customer GetOrCreateCustomer()
         {
-            var customer = _database.Customers.Where(x=>x.FirstName == _model.CustomerFirstName && x.LastName == _model.CustomerLastName).FirstOrDefault();
+            var customer = _database.Customers.Where(c=>c.FirstName == _model.CustomerFirstName && c.LastName == _model.CustomerLastName).FirstOrDefault();
             if (customer == null)
             {
                 var createCustomerModel = new CreateCustomerModel();
                 createCustomerModel.FirstName = _model.CustomerFirstName;
                 createCustomerModel.LastName = _model.CustomerLastName;
-                _customerCommand.Execute(createCustomerModel);
+                customer = _customerCommand.Execute(createCustomerModel);
             }
             return customer;
         }
 
         private Vehicle GetOrCreateVehicle()
         {
-            var vehicle = _database.Vehicles.Find(_model.VehicleRegistrationNumber);
+            var vehicle = _database.Vehicles.Where(v => v.RegistrationNumber == _model.VehicleRegistrationNumber).FirstOrDefault();
             if (vehicle == null)
             {
                 var createVehicleModel = new CreateVehicleModel();
                 createVehicleModel.RegistrationNumber = _model.VehicleRegistrationNumber;
-                createVehicleModel.RegistrationDate = _model.MaintenanceBookingDateTime;
+                createVehicleModel.RegistrationDate = _model.VehicleRegistrationDate;
                 createVehicleModel.BrandId = _model.BrandId;
-                _vehicleCommand.Create(createVehicleModel);
+                vehicle = _vehicleCommand.Create(createVehicleModel);
             }
             return vehicle;
         }

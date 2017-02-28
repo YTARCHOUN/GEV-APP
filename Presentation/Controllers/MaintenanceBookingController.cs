@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaintenanceBooking;
 using VehicleMaintenance.Services.MaintenanceBookings;
 using VehicleMaintenance.ViewModel.MaintenanceBooking;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace VehicleMaintenance.Controllers
 {
@@ -34,7 +36,7 @@ namespace VehicleMaintenance.Controllers
                 MaintenanceBookingDateTime = viewModel.CreateMaintenanceBookingModel.MaintenanceBookingDateTime,
                 VehicleRegistrationDate = viewModel.CreateMaintenanceBookingModel.VehicleRegistrationDate,
                 VehicleRegistrationNumber = viewModel.CreateMaintenanceBookingModel.VehicleRegistrationNumber,
-                MaintenanceServicesIds = viewModel.CreateMaintenanceBookingModel.MaintenanceServicesIds
+                MaintenanceServicesIds = viewModel.MaintenanceOptions.FindAll(x => x.Selected = true).Select(item => int.Parse(item.Value)).ToList()
             };
             _createCommand.Execute(createMaintenanceBookingModel);
             return View();

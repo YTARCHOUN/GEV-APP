@@ -1,5 +1,6 @@
 ﻿using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
 using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle.Factory;
+using VehicleMaintenance.Domain.Vehicles;
 
 namespace VehicleMaintenance.DataAccess.Vehicles.Commands
 {
@@ -12,7 +13,7 @@ namespace VehicleMaintenance.DataAccess.Vehicles.Commands
             _databaseService = databaseService;
             _factory = factory;
         }
-        public void Create(CreateVehicleModel model)
+        public Vehicle Create(CreateVehicleModel model)
         {
 
             var brand = _databaseService.Brands.Find(model.BrandId);
@@ -22,6 +23,10 @@ namespace VehicleMaintenance.DataAccess.Vehicles.Commands
 
 
             _databaseService.Vehicles.Add(vehicle);
+
+            _databaseService.Save();
+
+            return vehicle;
         }
     }
 }

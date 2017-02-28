@@ -7,10 +7,6 @@ namespace VehicleMaintenance.Domain.Maintenances
 {
     public class Maintenance:IEntity
     {
-        public Maintenance()
-        {
-            State = new State(StatefullEntities.Maintenance);
-        }
         public int Id { get; set; }
 
         public Vehicle Vehicle { get; set; }

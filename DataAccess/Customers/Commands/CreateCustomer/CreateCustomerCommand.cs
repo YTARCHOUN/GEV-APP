@@ -1,5 +1,7 @@
-﻿using Application.Customers.Commands;
+﻿using System;
+using Application.Customers.Commands;
 using VehicleMaintenance.DataAccess.Customers.Factory;
+using VehicleMaintenance.Domain.Customers;
 
 namespace VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer
 {
@@ -14,13 +16,15 @@ namespace VehicleMaintenance.DataAccess.Customers.Commands.CreateCustomer
             _factory = factory;
         }
 
-        public void Execute(CreateCustomerModel model)
+        public Customer Execute(CreateCustomerModel model)
         {
             var customer = _factory.Create(model.FirstName, model.LastName);
 
             _database.Customers.Add(customer);
 
             _database.Save();
+
+            return customer;
         }
     }
 }

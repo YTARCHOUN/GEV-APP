@@ -1,4 +1,5 @@
 ﻿using System;
+using VehicleMaintenance.Domain.Common.Entities;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.MaintenanceBookings;
 using VehicleMaintenance.Domain.Vehicles;
@@ -8,6 +9,6 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaint
 {
     public interface IMaintenanceBookingFactory
     {
-        MaintenanceBooking Create(DateTime datetime, Customer customer, Vehicle vehicle, Workshop workshop);
+        MaintenanceBooking Create(DateTime datetime, Customer customer, Vehicle vehicle, Workshop workshop, State state);
     }
 }

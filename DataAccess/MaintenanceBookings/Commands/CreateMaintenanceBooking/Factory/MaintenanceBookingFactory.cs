@@ -1,4 +1,5 @@
 ﻿using System;
+using VehicleMaintenance.Domain.Common.Entities;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.MaintenanceBookings;
 using VehicleMaintenance.Domain.Vehicles;
@@ -8,7 +9,8 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaint
 {
     public class MaintenanceBookingFactory : IMaintenanceBookingFactory
     {
-        public MaintenanceBooking Create(DateTime datetime, Customer customer, Vehicle vehicle, Workshop workshop)
+        
+        public MaintenanceBooking Create(DateTime datetime, Customer customer, Vehicle vehicle, Workshop workshop, State state)
         {
             var maintenanceBooking = new MaintenanceBooking();
 
@@ -19,6 +21,8 @@ namespace VehicleMaintenance.DataAccess.MaintenanceBookings.Commands.CreateMaint
             maintenanceBooking.Vehicle = vehicle;
 
             maintenanceBooking.Workshop = workshop;
+
+            maintenanceBooking.State = state;
 
             return maintenanceBooking;
         }

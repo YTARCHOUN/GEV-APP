@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using VehicleMaintenance.Domain.Common.Entities;
 using VehicleMaintenance.Domain.Customers;
 using VehicleMaintenance.Domain.Employees;
 using VehicleMaintenance.Domain.MaintenanceBookings;
@@ -28,6 +29,8 @@ namespace VehicleMaintenance.DataAccess
         public DbSet<Workshop> Workshops { get; set; }
 
         public DbSet<MaintenanceOption> MaintenanceOptions { get; set; }
+
+        public DbSet<State> States { get; set; }
 
         public DatabaseService(string connectionString)
         {

@@ -1,9 +1,10 @@
 ﻿using VehicleMaintenance.DataAccess.Vehicles.Commands.CreateVehicle;
+using VehicleMaintenance.Domain.Vehicles;
 
 namespace VehicleMaintenance.DataAccess.Vehicles.Commands
 {
     public interface ICreateVehicleCommand
     {
-        void Create(CreateVehicleModel model);
+        Vehicle Create(CreateVehicleModel model);
     }
 }

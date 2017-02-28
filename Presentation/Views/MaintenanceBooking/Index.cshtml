@@ -10,7 +10,7 @@
         <label>Date de mise en circulation</label>
         <input asp-for="@Model.CreateMaintenanceBookingModel.VehicleRegistrationDate" type="date" />
         <label>Marque</label>
-        <select asp-items="@Model.Brands"></select>
+        <select asp-items="@Model.Brands" asp-for="CreateMaintenanceBookingModel.BrandId"></select>
         <label>Qu'est ce qu'il faut entretenir ?</label>
         @{
             for (int i = 0; i < Model.MaintenanceOptions.Count; i++)
